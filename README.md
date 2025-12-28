@@ -42,7 +42,13 @@ We conducted a rigorous comparison between two primary segmentation architecture
 U-Net is the standard for medical and fine-grained segmentation. We trained it using **ResNet34**, **ResNet101**, and **VGG16**.
 
 ![U-Net Result](assets/U-net_main.png)
-*Figure 1: Segmentation results using U-Net architecture.*
+
+#### U-Net with ResNet101
+![ResNet101](assets/DeepLab_resnet50.png)
+#### U-Net with ResNet34
+![ResNet34](assets/DeepLab_resnet50.png)
+#### U-Net with VGG16
+![VGG16](assets/DeepLab_resnet50.png)
 
 ### 2. DeepLabV3+ (Spatial Pyramid Pooling)
 DeepLabV3+ uses Atrous Spatial Pyramid Pooling (ASPP) to capture multi-scale context. We trained custom implementations using multiple backbones.
@@ -66,18 +72,15 @@ Below is the evaluation summary of all trained models.
 
 | Model | Backbone | Mean IoU | F1 Score (Dice) | Pixel Accuracy | Precision | Recall |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **U-Net** | ResNet34 | *[Insert]* | *[Insert]* | *[Insert]* | *[Insert]* | *[Insert]* |
-| **U-Net** | ResNet101 | *[Insert]* | *[Insert]* | *[Insert]* | *[Insert]* | *[Insert]* |
-| **U-Net** | VGG16 | *[Insert]* | *[Insert]* | *[Insert]* | *[Insert]* | *[Insert]* |
+| **U-Net** | ResNet34 | *0.7248* | *0.8239* | *0.8223* | *0.7762* | *0.9034* |
+| **U-Net** | ResNet101 | *0.8859* | *0.9377* | *0.9368* | *0.9190* | *0.9585* |
+| **U-Net** | VGG16 | *0.7750* | *0.8623* | *0.8536* | *0.7909* | *0.9704* |
 | **DeepLabV3+** | ResNet50 | *0.8877* | *0.9392* | *0.9390* | *0.9424* | *0.9372* |
 | **DeepLabV3+** | ResNet101 | *0.9372* | *0.9372* | *0.9432* | *0.9363* | *0.9538* |
 | **DeepLabV3+** | Xception | *0.8659* | *0.9257* | *0.9261* | *0.9154* | *0.9385* |
 | **DeepLabV3+** | EfficientNetB5 | *0.8784* | *0.9335* | *0.9323* | *0.9210* | *0.9488* |
 
-> **Key Findings:**
-> * **DeepLabV3+ (xx)** achieved the highest overall accuracy due to its robust feature extraction.
-> * **U-Net (xx)** performed exceptionally well on boundaries but required significantly more GPU memory.
-> * **Xception** offered the best balance between speed and accuracy.
+
 
 ---
 
