@@ -23,15 +23,15 @@ We did **not** use the raw PASTIS data directly. Instead, we engineered a custom
     * **0 (Background):** Represents occupied areas, roads, or water bodies.
 2.  **Format Conversion:**
     * **Input:** Multi-channel satellite .tif files.
-    * **Output:** Standardized `.npy` (Numpy) files for efficient high-speed loading.
+    * **Output:** Standardized `.npy` (Numpy) files for efficient high-speed loading. and later to `.png`
 3.  **Resizing & Normalization:**
     * All patches were resized to **160x160 pixels** to ensure compatibility with the pooling layers of ResNet and VGG backbones (which require inputs divisible by 32).
     * Pixel values were normalized to the range `[0, 1]` or standardized using ImageNet mean/std (depending on the backbone requirements).
 
 ### Final Data Structure
 The processed data is stored in a structured format for the data loader:
-* `X_train.npy`: Tensor of shape `(N, 160, 160, 3)` containing RGB satellite images.
-* `Y_train.npy`: Tensor of shape `(N, 160, 160, 1)` containing binary ground truth masks.
+* `X_train.png`: Tensor of shape `(N, 160, 160, 3)` containing RGB satellite images.
+* `Y_train.png`: Tensor of shape `(N, 160, 160, 1)` containing binary ground truth masks.
 ---
 
 ## Model Architectures & Experimentation
@@ -78,15 +78,15 @@ ResNets are available in a range of depths, designated as ResNet-XX, where XX is
 ## 📊 Performance Comparison
 Below is the evaluation summary of all trained models.
 
-| Model | Backbone | Mean IoU | F1 Score (Dice) | Pixel Accuracy | Precision | Recall |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **U-Net** | ResNet34 | *0.7248* | *0.8239* | *0.8223* | *0.7762* | *0.9034* |
-| **U-Net** | ResNet101 | *0.8859* | *0.9377* | *0.9368* | *0.9190* | *0.9585* |
-| **U-Net** | VGG16 | *0.7750* | *0.8623* | *0.8536* | *0.7909* | *0.9704* |
-| **DeepLabV3+** | ResNet50 | *0.8877* | *0.9392* | *0.9390* | *0.9424* | *0.9372* |
-| **DeepLabV3+** | ResNet101 | *0.9372* | *0.9372* | *0.9432* | *0.9363* | *0.9538* |
-| **DeepLabV3+** | Xception | *0.8659* | *0.9257* | *0.9261* | *0.9154* | *0.9385* |
-| **DeepLabV3+** | EfficientNetB5 | *0.8784* | *0.9335* | *0.9323* | *0.9210* | *0.9488* |
+| Model | Backbone | Mean IoU | F1 Score (Dice) | Pixel Accuracy | Precision | Recall | Over All Preformance |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **U-Net** | ResNet34 | *0.7248* | *0.8239* | *0.8223* | *0.7762* | *0.9034* | *0.0* |
+| **U-Net** | ResNet101 | *0.8859* | *0.9377* | *0.9368* | *0.9190* | *0.9585* |*0.0* |
+| **U-Net** | VGG16 | *0.7750* | *0.8623* | *0.8536* | *0.7909* | *0.9704* | *0.0* |
+| **DeepLabV3+** | ResNet50 | *0.8877* | *0.9392* | *0.9390* | *0.9424* | *0.9372* |*0.0* |
+| **DeepLabV3+** | ResNet101 | *0.9372* | *0.9372* | *0.9432* | *0.9363* | *0.9538* |*0.0* |
+| **DeepLabV3+** | Xception | *0.8659* | *0.9257* | *0.9261* | *0.9154* | *0.9385* |*0.0* |
+| **DeepLabV3+** | EfficientNetB5 | *0.8784* | *0.9335* | *0.9323* | *0.9210* | *0.9488* |*0.0* |
 
 
 
