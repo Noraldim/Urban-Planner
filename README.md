@@ -141,7 +141,17 @@ The system currently places:
 ---
 
 ## 🛠️ How to Run the Models Locally
+#### Data file structure need to be as following 
 
+```bash
+├── assets/             
+├── data/             # There will two directorys inside images and masks
+│   ├── images/          
+│   └── masks/           
+├── models/       
+├── README.md            
+└── requirements.txt
+```
 This project contains standalone training scripts for different model architectures and backbones. Follow the steps below to train any of the models on your local machine.
 
 ### Prerequisites
