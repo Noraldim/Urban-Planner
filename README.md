@@ -211,16 +211,25 @@ python U-net_resnet101.py
 ```
 
 
+
 req 
 
-authors 
-n
-dr
+
+## Authors
+
+* [**Noraldim Kamis**](https://www.linkedin.com/in/noraldim-kamis-b40751263/)- *Computer Eng Student* 
+* [**Dr.  Rıdvan YAYLA**](https://www.linkedin.com/in/r%C4%B1dvan-yayla-ba237748/) *Project Assistanc* 
 
 
 
-aqnolag
-https://arxiv.org/pdf/1505.04597
-https://ieeexplore.ieee.org/document/7780459
-https://ieeexplore.ieee.org/document/9446143
-https://github.com/mukund-ks/DeepLabV3-Segmentation
+
+
+## Acknowledgements
+
+* Olaf Ronneberger, Philipp Fischer, and Thomas Brox U-Net: Convolutional Networks for Biomedical [Image Segmentation](https://arxiv.org/pdf/1505.04597)
+
+* Kaiming He; Xiangyu Zhang; Shaoqing Ren; Jian Sun Deep [Residual Learning](https://ieeexplore.ieee.org/document/7780459) for Image Recognition 
+
+* U-Net and Its Variants for [Medical Image Segmentation](https://ieeexplore.ieee.org/document/9446143): A Review of Theory and Applications Nahian Siddique; Sidike Paheding; Colin P. Elkin; Vijay Devabhaktuni 
+
+* [DeepLabV3-Segmentation](https://github.com/mukund-ks/DeepLabV3-Segmentation) Mukund Kumar Surehli - Dr. Naveen Aggarwal -Dr. Garima Joshi - 
